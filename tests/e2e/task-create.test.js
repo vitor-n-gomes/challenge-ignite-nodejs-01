@@ -3,31 +3,15 @@ import assert from 'node:assert'
 import { promisify } from 'node:util'
 import { makeTask } from '../factory/task.js'
 
-const testPort = process.env.PORT ? Number(process.env.PORT) + 1 : 9009
+const testPort = 9009
 
-const testServerAddress = `http://localhost:${testPort}`
-let server;
+await test('Create Task', async (t) => {
 
-test('Create Task', async (t) => {
+  process.env.PORT = testPort
 
-  t.before('Starting server', async () => {
-
-    process.env.PORT = testPort
-
-    server = await import('../../src/server.js')
-
-  })
-
-  t.after('Closing server', async () => {
-
-    if(!server){
-      console.error('Server is undefined');
-      
-    }
-
-    await promisify(server.close.bind(server))()
-
-  })
+  const { server } = await import('../../src/server.js')
+  
+  const testServerAddress = `http://localhost:${testPort}`
 
   await t.test('it should Create a task', async (t) => {
 
@@ -90,7 +74,6 @@ test('Create Task', async (t) => {
   
   })
 
-
- 
+  await promisify(server.close.bind(server))()
 
 })

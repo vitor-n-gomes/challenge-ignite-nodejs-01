@@ -2,56 +2,28 @@ import test from 'node:test'
 import assert from 'node:assert'
 import { promisify } from 'node:util'
 import { makeTask } from '../factory/task.js'
+import TaskCreate from '../../src/services/TaskCreate.js'
 
-const testPort = process.env.PORT ? Number(process.env.PORT) + 1 : 9009
-const testServerAddress = `http://localhost:${testPort}`
-let server;
+
+const testPort = 9010
 let id;
 
-test('Update Task', async (t) => {
+await test('Update Task', async (t) => {
 
-  t.before('Starting server', async () => {
+  process.env.PORT = testPort
 
-    process.env.PORT = testPort
+  const { server } = await import('../../src/server.js')
 
-    server = await import('../../src/server.js')
-
-  })
-
-  t.after('Closing server', async () => {
-
-    if (!server) {
-      console.error('Server is undefined');
-
-    }
-
-    await promisify(server.close.bind(server))()
-
-  })
-
-  t.before('Get the ID from a task', async (t) => {
+  const testServerAddress = `http://localhost:${testPort}`
 
 
-    const task = makeTask();
+  const create = new TaskCreate();
 
-    const request = await fetch(testServerAddress + '/tasks', {
-      method: 'POST',
-      body: JSON.stringify(task)
-    })
+  const task = makeTask();
 
-    assert.deepStrictEqual(
-      request.headers.get('content-type'),
-      'application/json'
-    )
+  const item = create.handle(task);
 
-    assert.strictEqual(request.status, 201)
-
-    const result = await request.json()
-
-    id = result.id;
-
-
-  })
+  id = item.id;
 
   await t.test('it should update a task', async (t) => {
 
@@ -94,5 +66,6 @@ test('Update Task', async (t) => {
 
   })
 
+  await promisify(server.close.bind(server))()
 
 })
