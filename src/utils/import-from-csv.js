@@ -15,7 +15,7 @@ import { parse } from "csv-parse";
 
   for await (const record of parser) {
     await axios
-      .post("http://localhost:3333/tasks", {
+      .post("http://localhost:3000/tasks", {
         title: record[0],
         description: record[1],
       })
