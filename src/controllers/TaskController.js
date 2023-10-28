@@ -1,3 +1,4 @@
+import { Database } from "../../database/database.js";
 import TaskError from "../errors/TaskErrors.js";
 import TaskCreate from "../services/TaskCreate.js";
 import TaskDelete from "../services/TaskDelete.js";
@@ -80,6 +81,28 @@ export class TaskController {
 
       remove.handle(id);
 
+    } catch (error) {
+      if (error instanceof TaskError) {
+        return res
+          .writeHead(error.statusCode)
+          .end(JSON.stringify({ message: error.message }));
+      }
+    }
+
+    return res.writeHead(204).end();
+
+  }
+
+  patch(req, res) {
+
+    const { id } = req.params;
+    
+    try {
+      
+      const database = new Database;
+
+      database.toggleComplete("tasks", id);
+    
     } catch (error) {
       if (error instanceof TaskError) {
         return res

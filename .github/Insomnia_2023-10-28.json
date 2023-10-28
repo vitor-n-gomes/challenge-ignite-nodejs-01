@@ -1,0 +1,178 @@
+{
+    "_type": "export",
+    "__export_format": 4,
+    "__export_date": "2023-10-28T19:23:32.336Z",
+    "__export_source": "insomnia.desktop.app:v8.3.0",
+    "resources": [
+        {
+            "_id": "req_0132f0b4ee564c6d8f82993cb7931df1",
+            "parentId": "fld_1db3b8ec344f4370928b8fa1952578c4",
+            "modified": 1698520705385,
+            "created": 1698520384344,
+            "url": "http://localhost:3000/tasks",
+            "name": "Index",
+            "description": "",
+            "method": "GET",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.3.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1698520384344,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "fld_1db3b8ec344f4370928b8fa1952578c4",
+            "parentId": "wrk_scratchpad",
+            "modified": 1698520379832,
+            "created": 1698520379832,
+            "name": "RocketSeat",
+            "description": "",
+            "environment": {},
+            "environmentPropertyOrder": null,
+            "metaSortKey": -1698520379832,
+            "_type": "request_group"
+        },
+        {
+            "_id": "wrk_scratchpad",
+            "parentId": null,
+            "modified": 1698520317324,
+            "created": 1698520317324,
+            "name": "Scratch Pad",
+            "description": "",
+            "scope": "collection",
+            "_type": "workspace"
+        },
+        {
+            "_id": "req_6ad959461d474df78b2dc48a1e3bfa32",
+            "parentId": "fld_1db3b8ec344f4370928b8fa1952578c4",
+            "modified": 1698520681726,
+            "created": 1698520575671,
+            "url": "http://localhost:3000/tasks",
+            "name": "Create",
+            "description": "",
+            "method": "POST",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n \"title\": \"Neque porro quisquam est qui dolorem\",\n \"description\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.3.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1698520384244,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_a1e9ee4ca7bb4016b8e3929f7bce6761",
+            "parentId": "fld_1db3b8ec344f4370928b8fa1952578c4",
+            "modified": 1698520778075,
+            "created": 1698520728470,
+            "url": "http://localhost:3000/tasks/a9302ba3-2cb5-46db-b150-76db708691fb",
+            "name": "Update",
+            "description": "",
+            "method": "PUT",
+            "body": {
+                "mimeType": "application/json",
+                "text": "{\n \"title\": \"Teste\",\n \"description\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit\"\n}"
+            },
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                },
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.3.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1698520384194,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "req_38c6b1d29f724e8b8f7942bd8b2195d9",
+            "parentId": "fld_1db3b8ec344f4370928b8fa1952578c4",
+            "modified": 1698520829672,
+            "created": 1698520811742,
+            "url": "http://localhost:3000/tasks/a9302ba3-2cb5-46db-b150-76db708691fb",
+            "name": "Delete",
+            "description": "",
+            "method": "DELETE",
+            "body": {},
+            "parameters": [],
+            "headers": [
+                {
+                    "name": "User-Agent",
+                    "value": "insomnia/8.3.0"
+                }
+            ],
+            "authentication": {},
+            "metaSortKey": -1698520384144,
+            "isPrivate": false,
+            "settingStoreCookies": true,
+            "settingSendCookies": true,
+            "settingDisableRenderRequestBody": false,
+            "settingEncodeUrl": true,
+            "settingRebuildPath": true,
+            "settingFollowRedirects": "global",
+            "_type": "request"
+        },
+        {
+            "_id": "env_99d30891da4bdcebc63947a8fc17f076de878684",
+            "parentId": "wrk_scratchpad",
+            "modified": 1698520329223,
+            "created": 1698520329223,
+            "name": "Base Environment",
+            "data": {},
+            "dataPropertyOrder": null,
+            "color": null,
+            "isPrivate": false,
+            "metaSortKey": 1698520329223,
+            "_type": "environment"
+        },
+        {
+            "_id": "jar_99d30891da4bdcebc63947a8fc17f076de878684",
+            "parentId": "wrk_scratchpad",
+            "modified": 1698520329288,
+            "created": 1698520329288,
+            "name": "Default Jar",
+            "cookies": [],
+            "_type": "cookie_jar"
+        }
+    ]
+}

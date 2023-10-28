@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(" Run Forrest, Run 💨");
+  console.log(" Run Forrest, Run 💨 it is running at port " + PORT);
 });
 
 

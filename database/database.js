@@ -51,7 +51,7 @@ export class Database {
       this.#database[table].splice(rowIndex, 1);
       this.#persist();
     } else {
-      throw new TaskError("Não existe Task com o ID informado.");
+      throw new TaskError("There is no Task with the given ID.");
     }
   }
 
@@ -70,7 +70,7 @@ export class Database {
       this.#database[table].push(itemUpdated);
       this.#persist();
     } else {
-      throw new TaskError("Não existe Task com o ID informado.");
+      throw new TaskError("There is no Task with the given ID.");
     }
   }
 
@@ -86,7 +86,7 @@ export class Database {
       this.#database[table][rowIndex].updated_at = new Date().toISOString();
       this.#persist();
     } else {
-      throw new TaskError("Não existe Task com o ID informado.");
+      throw new TaskError("There is no Task with the given ID.");
     }
   }
 }

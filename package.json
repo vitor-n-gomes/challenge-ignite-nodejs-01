@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/vitor-n-gomes/challenge-ignite-nodejs-01/issues"
   },
-  "homepage": "https://github.com/vitor-n-gomes/challenge-ignite-nodejs-01#readme"
+  "homepage": "https://github.com/vitor-n-gomes/challenge-ignite-nodejs-01#readme",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "csv-parse": "^5.5.2"
+  }
 }
