@@ -8,7 +8,7 @@ Before you start, you will need to have the following tools installed on your ma
     1. Git
     2. Node 21 >= 
 
-### Running Server 
+## Running Server 
 
 ```bash
 # Clone this repository
@@ -67,7 +67,7 @@ Tasks have the following properties:
 - **_updated_at_** - Should always be changed to the date when the task was updated.
 
 
-### Application routes
+## Application routes
 
 <details>
   <summary>GET - <code>/tasks</code></summary>
