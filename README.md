@@ -1,7 +1,7 @@
 # challenge-ignite-nodejs-01
 This is an exercise to reinforce learning associated with NodeJS
 
-## Instalação
+## Install
 
 Before you start, you will need to have the following tools installed on your machine:
 
